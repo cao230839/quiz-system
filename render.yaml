@@ -1,0 +1,7 @@
+scripts:
+  build: |
+    apt-get update && apt-get install -y poppler-utils libmagic1 gcc python3-dev
+    pip install -r requirements.txt
+
+  start: |
+    uvicorn app.main:app --host 0.0.0.0 --port $PORT
